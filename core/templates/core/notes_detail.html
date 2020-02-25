@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block content %}
+<dl><dt>{{note.body}}</dt>{{note.body}}</dl>
+{% endblock %}
+
+{% comment %} common pattern to see one item {% endcomment %}
+
+{%block title%}
+<h2>Note List</h2>
+{%endblock%}
+
+{% block for notes_section%}
+
+    {% for note in notes%}
+
+    <div class = "note" id="{"
+
+    
