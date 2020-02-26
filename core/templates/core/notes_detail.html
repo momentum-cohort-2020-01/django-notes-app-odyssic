@@ -1,18 +1,17 @@
-{% extends 'base.html'%}
-{% block content %}
-<dl><dt>{{note.body}}</dt>{{note.body}}</dl>
+<div>
+  <a href="/">👈 back to Notes list </a>
+</div>
+
+{% extends "base.html" %}
+
+{% block heading %}
+<h2>Notes {{ pk }}: {{ note.item }} </h2>
+
 {% endblock %}
 
-{% comment %} common pattern to see one item {% endcomment %}
+{% block content %}
+<div class="note" id="{{ pk }}">
+  <p style="margin: 0 25px 50px;">{{ note.body }}</p>
+</div>
+{% endblock %}
 
-{%block title%}
-<h2>Note List</h2>
-{%endblock%}
-
-{% block for notes_section%}
-
-    {% for note in notes%}
-
-    <div class = "note" id="{"
-
-    

@@ -1,16 +1,15 @@
-{% extends 'base.html' %}
-{% block content %}
-<table>
-    <thead>
-        <tr><th>MY NOTES
+{% extends "base.html" %}
 
-        </th>
-        </tr>
-    </thead>
-<tbody>
-    {% for note in notes.values %}
-    <tr><td>{{note.body}}</td><td>{{note.details}}</td></tr>
-    {% endfor %}
-</tbody>
-</table>
+{% block heading %}
+<h2>Note list</h2>
 {% endblock %}
+
+{% block content %}
+    {% for note in notes %}
+        <div id ="{{note.pk}}">
+        <a style="font-weight: bold;" href="{% url 'notes-detail' note.pk %}">{{ note.title }}</a>
+        <p>{{ note.body }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+

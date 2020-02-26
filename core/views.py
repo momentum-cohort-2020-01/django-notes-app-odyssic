@@ -2,16 +2,16 @@
 
 from django.shortcuts import render
 
-import data
+from .models import Note
 
 
 def notes_list(request):
-    notes = data.NOTES
+    notes = Note.objects.all()
 
-    return render(request, 'base.html', {'notes': notes})
+    return render(request, 'core/notes_list.html', {'notes': notes})
     # context items to be passed
 
 
 def notes_detail(request, pk):
     note = Note.objects.get(pk=pk)
-    return rende(request, 'core/notes_detail.html', {'note': note, "pk": pk})
+    return render(request, 'core/notes_detail.html', {'note': note, "pk": pk})
