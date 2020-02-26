@@ -4,9 +4,9 @@
 
 {% load tz %}
 {% get_current_timezone as TIME_ZONE %}
-    <h2>New Note</h2>
-    <form method="POST" class="post-form">{% csrf_token %}
+    <h2>Edit Note</h2>
+    <form method="POST" class="post-note">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Submit</button>
+        <button type="submit" class="save btn btn-default">Edit</button>
     </form>
 {% endblock %}

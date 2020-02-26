@@ -2,6 +2,8 @@
   <a href="/">👈 back to Notes list </a>
 </div>
 
+
+
 {% extends "base.html" %}
 
 {% block content %}
@@ -11,9 +13,10 @@
                 {{ note.published_date }}
             </div>
         {% endif %}
-        <a class="btn btn-default" href="{% url 'notes-detail' pk=note.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        
         <h2>{{ note.title }}</h2>
         <p>{{ note.body|linebreaksbr }}</p>
+        <a class="btn btn-default" href="{% url 'note-edit' pk=note.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     </div>
 {% endblock %}
 
