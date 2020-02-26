@@ -1,4 +1,7 @@
 from django.db import models
+import datetime
+from django.utils import timezone
+
 
 # Create your models here.
 # Our model will be Django's AND more
@@ -8,6 +11,8 @@ from django.db import models
 class Note(models.Model):
     title = models.CharField(max_length=40)
     body = models.TextField(max_length=40)
+    create_time = models.DateField(default=datetime.date.today())
+    updated_time = models.DateField(default=datetime.date.today())
 
 
 def __str__(self):

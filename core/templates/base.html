@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>Notes</title>{% endblock %}
-    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.css">
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'core/static/styles.css' %}">
 </head>
-<h2>Header</h2>
+<h2>Notes</h2>
 <body>
     {% block content %}
+    <a href="{% url 'note_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 <section>
     <thead>
         <tr><th>My Notes</th>

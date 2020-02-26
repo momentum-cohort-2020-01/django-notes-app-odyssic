@@ -4,14 +4,16 @@
 
 {% extends "base.html" %}
 
-{% block heading %}
-<h2>Notes {{ pk }}: {{ note.item }} </h2>
-
-{% endblock %}
-
 {% block content %}
-<div class="note" id="{{ pk }}">
-  <p style="margin: 0 25px 50px;">{{ note.body }}</p>
-</div>
+    <div class="note">
+        {% if note.published_date %}
+            <div class="date">
+                {{ note.published_date }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'notes-detail' pk=note.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h2>{{ note.title }}</h2>
+        <p>{{ note.body|linebreaksbr }}</p>
+    </div>
 {% endblock %}
 
