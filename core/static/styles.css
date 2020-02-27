@@ -1,5 +1,31 @@
-* {
-    border-style: border-box;
-    margin: 0;
-    padding: 0;
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap') 
+
+* { box-sizing: border-box;
+margin: 0;
+padding: 0;
+text-decoration: none;
+
+}
+link {
+    text-decoration: none;
+}
+body {
+    font-size: 70%;
+    font-family: sans-serif;
+}
+h1 {
+    font-size: 70%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container {
+    flex-flow: column;
+    border: green, 10px;
+}
+.notes {
+    flex-flow: column;
+    flex-grow: inherit;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: gray;
+    border: red, 10px;
 }

@@ -9,6 +9,8 @@
         <div id ="{{note.pk}}">
         <a style="font-weight: bold;" href="{% url 'notes-detail' note.pk %}">{{ note.title }}</a>
         <p>{{ note.body }}</p>
+        <p>{{ note.create_time }}</p> 
+        <p>{{ note.updated_time }}</p> 
         </div>
     {% endfor %}
 {% endblock %}

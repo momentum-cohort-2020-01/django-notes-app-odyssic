@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from core import views
 
+# the order of urls sometimes makes a difference
 
 urlpatterns = [
     path('', views.notes_list, name='notes-list'),

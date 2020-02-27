@@ -10,9 +10,10 @@ from django.utils import timezone
 
 class Note(models.Model):
     title = models.CharField(max_length=40)
-    body = models.TextField(max_length=40)
-    create_time = models.DateField(default=datetime.date.today())
-    updated_time = models.DateField(default=datetime.date.today())
+    body = models.TextField(max_length=None)
+    create_time = models.DateField(
+        default=django.utils.timezone.now())
+    updated_time = models.DateField(default=django.utils.timezone.now())
 
 
 def __str__(self):
