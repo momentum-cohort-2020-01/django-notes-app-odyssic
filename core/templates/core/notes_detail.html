@@ -16,7 +16,8 @@
         
         <h2>{{ note.title }}</h2>
         <p>{{ note.body|linebreaksbr }}</p>
-        <a class="btn btn-default" href="{% url 'note-edit' pk=note.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'note-edit' pk=note.pk %}">Edit<span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="button" href={% url 'note-delete' pk=note.pk %} pk=note.pk %}">Delete</a>
     </div>
 {% endblock %}
 

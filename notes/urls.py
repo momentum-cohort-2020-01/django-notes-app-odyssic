@@ -25,5 +25,6 @@ urlpatterns = [
     path('note/new/', views.note_new, name='note-new'),
     path('note/<int:pk>/edit/', views.note_edit, name='note-edit'),
     path('admin/', admin.site.urls),
+    path('notes/<int:pk>/delete/', views.note_delete, name='note-delete')
     # wasalready there
 ]

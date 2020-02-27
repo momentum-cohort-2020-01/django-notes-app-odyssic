@@ -53,13 +53,5 @@ def note_edit(request, pk):
 
 def note_delete(request, pk):
     note = get_object_or_404(Note, pk=pk)
-    if request.method == "POST":
-        form = NoteForm(request.POST, instance=note)
-
-        if form.is_valid():
-            note = form.save()
-
-            return redirect('notes-detail', pk=note.pk)
-    else:
-        form = NoteForm(instance=note)
-    return render(request, 'core/note_edit.html', {'form': form})
+    note.delete()
+    return redirect('notes-list')
